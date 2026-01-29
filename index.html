@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>And K｜あなたを、keepする。</title>
+  <meta name="description" content="And Kは、健康・習慣・成長・変化といった、あなたの“keep”を支えるブランドです。" />
+
+  <!-- OGP（LINEで送ったときの見栄え） -->
+  <meta property="og:title" content="And K｜あなたを、keepする。" />
+  <meta property="og:description" content="“続けたい”が続く毎日へ。気持ちが乗る日も、乗らない日も。忙しい週も、静かな夜も。どんな一日でも、あなたの“続けたい”が続いていく。そんな毎日へ向けて、And Kは寄り添い続けていく。
+" />
+  <meta property="og:type" content="website" />
+  <!-- og:image は後で追加でOK（いったん無しでも問題なし） -->
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --card:#111625;
+      --text:#e9eefc;
+      --muted:#b9c4e6;
+      --accent:#00a4e3;
+      --accent2:#0056d5;
+      --line:#17c755;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 20px;
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Segoe UI", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(0,164,227,.16), transparent 60%),
+        radial-gradient(1000px 600px at 90% 30%, rgba(0,86,213,.16), transparent 55%),
+        radial-gradient(700px 400px at 40% 90%, rgba(255,255,255,.06), transparent 55%),
+        var(--bg);
+      line-height:1.7;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px 80px}
+    header{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:8px 0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      letter-spacing:.04em;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 14px 30px rgba(0,164,227,.18);
+    }
+    .brand strong{font-size:15px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:-2px}
+
+    .pill{
+      padding:10px 14px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      font-size:13px; color:var(--muted);
+      display:flex; gap:10px; align-items:center;
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background:rgba(255,255,255,.45)}
+
+    .hero{
+      padding:56px 0 30px;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns:1fr; gap:16px}
+      .hero{padding:40px 0 16px}
+    }
+    .card{
+      border:1px solid var(--border);
+      background:rgba(17,22,37,.72);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+    }
+    h1{
+      font-size: clamp(28px, 4vw, 44px);
+      margin:0 0 10px;
+      letter-spacing: .01em;
+    }
+    .lead{
+      font-size:16px;
+      color:var(--muted);
+      margin:0 0 22px;
+      max-width:48ch;
+    }
+    .quote{
+      margin: 16px 0 0;
+      padding: 14px 16px;
+      border-left: 2px solid rgba(0,164,227,.55);
+      background: rgba(0,164,227,.08);
+      border-radius: 14px;
+      color: #d8e9ff;
+      font-size: 14px;
+    }
+
+    .cta-row{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:22px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:13px 16px;
+      border-radius: 14px;
+      font-weight:700;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      transition: transform .15s ease, background .15s ease;
+      font-size:14px;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09)}
+    .btn-primary{
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 20px 40px rgba(0,164,227,.18);
+    }
+    .btn-primary:hover{background: linear-gradient(135deg, #18b2ee, #0a66ff)}
+    .btn-line{
+      border: none;
+      background: linear-gradient(135deg, var(--line), #0ea95a);
+      box-shadow: 0 20px 40px rgba(23,199,85,.15);
+    }
+    .btn-line:hover{background: linear-gradient(135deg, #2ae06b, #11b15f)}
+    .btn small{font-weight:600; opacity:.9}
+
+    .side{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .mini{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      padding:18px;
+    }
+    .mini h3{margin:0 0 8px; font-size:14px}
+    .mini p{margin:0; font-size:13px; color:var(--muted)}
+    .grad-line{
+      height:2px; border-radius:9px;
+      background: linear-gradient(90deg, rgba(0,164,227,.0), rgba(0,164,227,.8), rgba(0,86,213,.8), rgba(0,86,213,0));
+      margin: 12px 0 0;
+      opacity:.85;
+    }
+
+    section{margin-top: 22px}
+    .section-title{
+      font-size: 13px;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      color: rgba(233,238,252,.75);
+      margin: 0 0 10px;
+    }
+    .grid3{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media (max-width: 860px){
+      .grid3{grid-template-columns:1fr}
+    }
+    .item h4{margin:0 0 8px; font-size:15px}
+    .item p{margin:0; font-size:13px; color:var(--muted)}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color: rgba(233,238,252,.85);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      margin-right:8px;
+      margin-bottom:8px;
+    }
+
+    footer{
+      margin-top:42px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color: rgba(233,238,252,.65);
+      font-size: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+    }
+    .note{
+      font-size:12px;
+      color: rgba(233,238,252,.70);
+      margin-top:8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>And K</strong>
+          <span>Brand Draft / Pre-opening</span>
+        </div>
+      </div>
+      <div class="pill" title="このページは身近な方への共有用です">
+        <div class="dot"></div>
+        共有用（仮LP）
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-grid">
+        <!-- LEFT -->
+        <div class="card">
+          <h1>あなたを、keepする。</h1>
+          <p class="lead">
+            And Kは、健康・習慣・成長・変化といった、あなたの“keep”を支えるブランドです。
+            気持ちがのる日ものらない日も。忙しい週も静かな夜も。
+            どんな一日でも、あなたの“続けたい”がそっと続いていく毎日へ。
+          </p>
+
+          <div class="cta-row">
+            <!-- 仮のLINEボタン -->
+            <a class="btn btn-line" href="LINE_URL_HERE" target="_blank" rel="noopener">
+              LINEでつながる（準備中）
+            </a>
+
+            <a class="btn btn-primary" href="#about">
+              And K とは
+            </a>
+
+            <a class="btn" href="#services">
+              サービス
+            </a>
+          </div>
+
+          <div class="quote">
+            「意志が弱いから続かない」んじゃない。<br/>
+            “続くように設計されていない”だけ。
+          </div>
+
+          <p class="note">
+            ※LINEボタンは仮です。公式LINE開設後にURLを差し替えるだけで完成します。
+          </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="side">
+          <div class="mini">
+            <h3>Vision</h3>
+            <p>“続けたい”が続く毎日へ。</p>
+            <div class="grad-line"></div>
+          </div>
+          <div class="mini">
+            <h3>Why</h3>
+            <p>
+              世の中には「頑張れる人向け」の健康習慣が多い。<br/>
+              だからこそ And K は、日常に溶け込む“続けられる仕組み”をつくる。
+            </p>
+          </div>
+          <div class="mini">
+            <h3>Opening</h3>
+            <p>2027年 神戸エリア（予定）</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <p class="section-title">About</p>
+        <div class="card">
+          <h2 style="margin:0 0 12px; font-size:22px;">And K は、鍛える場所じゃない。</h2>
+          <p style="margin:0; color:var(--muted); font-size:14px;">
+            もちろん身体は変える。だけど本質はそこじゃない。<br/>
+            And K は、あなたの「続けたい」を守り、整え、育てる場所。<br/>
+            体を起点に、生活が変わり、思考が変わり、未来が変わっていく。
+          </p>
+
+          <div style="margin-top:18px">
+            <span class="tag">keep moving</span>
+            <span class="tag">keep learning</span>
+            <span class="tag">keep connecting</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <p class="section-title">Services</p>
+        <div class="grid3">
+          <div class="card item">
+            <h4>Personal Training</h4>
+            <p>
+              ただ痩せる・鍛えるではなく、生活につながる設計へ。<br/>
+              あなたに合う「続く形」を一緒につくる。
+            </p>
+          </div>
+
+          <div class="card item">
+            <h4>Group Training</h4>
+            <p>
+              仲間がいると、人は続けられる。<br/>
+              “頑張る”より、“戻ってこれる”空気感を大切に。
+            </p>
+          </div>
+
+          <div class="card item">
+            <h4>Kids Program</h4>
+            <p>
+              運動能力より先に、「動くことが好き」を育てる。<br/>
+              子どもたちに、未来の自信を。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEXT -->
+      <section id="next">
+        <p class="section-title">Next</p>
+        <div class="card">
+          <h2 style="margin:0 0 12px; font-size:20px;">今は“準備中”。だからこそ、共有したい。</h2>
+          <p style="margin:0; color:var(--muted); font-size:14px;">
+            このページは、身近な方への共有用の仮LPです。<br/>
+            応援してくれる人と一緒に、And K を育てていきたい。
+          </p>
+
+          <div class="cta-row" style="margin-top:18px">
+            <a class="btn btn-line" href="LINE_URL_HERE" target="_blank" rel="noopener">
+              LINEでつながる（準備中）
+            </a>
+            <a class="btn" href="#about">上に戻る</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© And K (Draft)</div>
+        <div>Mission: あなたを、keepする。</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // 仮LINEボタン：まだ公式LINEがない場合の挙動
+    // LINE_URL_HERE のままだと、クリックした際にアラートを出す
+    const LINE_PLACEHOLDER = "LINE_URL_HERE";
+    document.querySelectorAll('a[href="LINE_URL_HERE"]').forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        alert("公式LINEは準備中です。開設後にURLを差し替えます。");
+      });
+    });
+  </script>
+</body>
+</html>
